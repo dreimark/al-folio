@@ -2,27 +2,66 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: "Micha Denkt In Text" # the website title (if blank, full name will be used instead)
+subtitle: "Die Zukunft von dreimark.com – Gedanken, Projekte und mehr"
+name: "Michael Huber"
 first_name: You
 middle_name: R.
 last_name: Name
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+description: "Der zentrale Ort für digitale Projekte, Automatisierung, Selfhosting und technische Inspirationen – bald die neue Heimat von dreimark.com"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+lang: de # the language of your site (for example: en, fr, cn, ru, etc.)
+locale: "de-DE"
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+repository: "https://github.com/dreimark/minimal-mistakes"
+logo: "/assets/images/logo.png"
+masthead_title: "Micha Denkt In Text"
 
 url: https://alshedivat.github.io # the base hostname & protocol for your site
 baseurl: /al-folio # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
+
+# -----------------------------------------------------------------------------
+# Author Information
+# -----------------------------------------------------------------------------
+
+author:
+  name: "Michael Huber"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "Dev, Tech Lover, Open Source Fan"
+  location: "Offenburg, Germany"
+  email: "michael@dreimark.com"
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://dreimark.com"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:michael@dreimark.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/dreimark"
+
+# -----------------------------------------------------------------------------
+# Footer Links
+# -----------------------------------------------------------------------------
+
+footer:
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://dreimark.com"
+    - label: "Impressum"
+      icon: "fas fa-fw fa-info-circle"
+      url: "/impressum/"
 
 # -----------------------------------------------------------------------------
 # Theme
@@ -67,7 +106,8 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: false # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+og_image: "/assets/images/og-image.jpg" # The site-wide (default for all links) Open Graph preview image
+twitter_username: "dreimark"
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -223,6 +263,15 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
 sass:
   style: compressed
@@ -392,6 +441,9 @@ enable_project_categories: true # enables categorization of projects into multip
 enable_medium_zoom: true # enables image zoom feature (as on medium.com)
 enable_progressbar: true # enables a horizontal progress bar linked to the vertical scroll position
 enable_video_embedding: false # enables video embedding for bibtex entries. If false, the button opens the video link in a new window.
+enable_copy_code_button: true
+highlight_theme: "monokai"
+dark_mode_toggle: true
 
 # -----------------------------------------------------------------------------
 # Library versions
@@ -643,3 +695,37 @@ jsonresume:
   - languages
   - interests
   - references
+
+# -----------------------------------------------------------------------------
+# HTTPS and Performance
+# -----------------------------------------------------------------------------
+
+https: true
+force_https: true
+http2: true
+ssl:
+  protocols: ["TLSv1.2", "TLSv1.3"]
+  ciphers: "HIGH:!aNULL:!MD5"
+  ocsp_stapling: true
+  hsts:
+    enabled: true
+    max_age: 31536000
+    include_subdomains: true
+    preload: true
+
+# -----------------------------------------------------------------------------
+# Header Navigation
+# -----------------------------------------------------------------------------
+
+header:
+  nav:
+    - label: "About Me"
+      url: "/about-me/"
+    - label: "Posts"
+      url: "/posts/"
+    - label: "Contact"
+      url: "/contact/"
+    - label: "Articles"
+      url: "/articles/"
+    - label: "Projects"
+      url: "/projects/"
